@@ -13,7 +13,6 @@ D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\htx_web.AssemblyInfo.cs
 D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\htx_web.TagHelpers.input.cache
 D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\htx_web.TagHelpers.output.cache
 D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\htx_web.RazorCoreGenerate.cache
-D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
 D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
 D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MainMenu.g.cshtml.cs
@@ -31,3 +30,11 @@ D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Delete.g.cs
 D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Details.g.cshtml.cs
 D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Edit.g.cshtml.cs
 D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Index.g.cshtml.cs
+D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Login\Index.g.cshtml.cs
+D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Members\Create.g.cshtml.cs
+D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Members\Delete.g.cshtml.cs
+D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Members\Details.g.cshtml.cs
+D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Members\Edit.g.cshtml.cs
+D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Members\Index.g.cshtml.cs
+D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Report\Index.g.cshtml.cs
+D:\work_space\HTX\htx_web\obj\Debug\netcoreapp2.1\Razor\Views\Report\ReportPdf.g.cshtml.cs

@@ -29,5 +29,7 @@ namespace htx_web.Models
         {}
 
         public DbSet<htx_web.Models.Admin> Admin { get; set; }
+
+        public DbSet<htx_web.Models.Member> Member { get; set; }
     }
 }

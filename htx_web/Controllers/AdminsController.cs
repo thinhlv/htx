@@ -53,7 +53,7 @@ namespace htx_web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,name,password")] Admin admin)
+        public async Task<IActionResult> Create([Bind("id,name,password,email,phone")] Admin admin)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace htx_web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,name,password")] Admin admin)
+        public async Task<IActionResult> Edit(int id, [Bind("id,name,password,email,phone")] Admin admin)
         {
             if (id != admin.id)
             {
