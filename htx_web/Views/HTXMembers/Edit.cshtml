@@ -1,4 +1,4 @@
-﻿<!-- Content Header (Page header) -->
+﻿@model htx_web.Models.HTXMember
 <section class="content-header">
     <h1>
         Members
@@ -9,36 +9,42 @@
     <!-- Horizontal Form -->
     <div class="box box-info">
         <div class="box-header with-border">
-            <h3 class="box-title">Add Member</h3>
+            <h3 class="box-title">Update Member</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form class="form-horizontal" method="post" action="Create">
+        <form class="form-horizontal" method="post" action="Edit">
             <div class="box-body">
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="name" placeholder="Name">
+                        <input type="text" class="form-control" name="name" value="@Model.name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="phone" placeholder="Phone">
+                        <input type="text" class="form-control" name="phone" placeholder="Phone" value="@Model.phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="email" placeholder="Email" value="@Model.email">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Address</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="address" placeholder="Address">
+                        <input type="text" class="form-control" name="address" placeholder="Address" value="@Model.address">
                     </div>
                 </div>
-                </div>
+                <input type="hidden" name="Id" value="@Model.id" />
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
                 <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right">Create</button>
+                <button type="submit" class="btn btn-info pull-right">Update</button>
             </div>
             <!-- /.box-footer -->
         </form>

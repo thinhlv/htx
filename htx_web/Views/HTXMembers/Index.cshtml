@@ -1,4 +1,4 @@
-﻿@model IEnumerable<htx_web.Models.Member>
+﻿@model IEnumerable<htx_web.Models.HTXMember>
 <section class="content-header">
     <h1>
         Members
@@ -24,9 +24,9 @@
                                 <th>Id</th>
                                 <th>Name</th>
                                 <th>Phone</th>
+                                <th>Email</th>
                                 <th>Address</th>
-                                @*<th>Created</th>
-                                <th>Specialist</th>*@
+                                <th>Created</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -37,10 +37,10 @@
                                     <td>@Html.DisplayFor(modelItem => item.id)</td>
                                     <td>@Html.DisplayFor(modelItem => item.name)</td>
                                     <td>@Html.DisplayFor(modelItem => item.phone)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.email)</td>
                                     <td>@Html.DisplayFor(modelItem => item.address)</td>
-                                    @*<td>@Html.DisplayFor(modelItem => item.Created)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Specialist)</td>*@
-                                    <td><a href="Members/Edit/@item.id">Edit</a> | <a href="" onclick="Delete('@item.id')">Delete</a></td>
+                                    <td>@Html.DisplayFor(modelItem => item.created)</td>
+                                    <td><a href="HTXMembers/Edit/@item.id">Edit</a> | <a href="" onclick="Delete('@item.id', '@item.name')">Delete</a></td>
                                 </tr>
                             }
                     </table>
@@ -62,21 +62,20 @@
     $(function () {
         $('#example1').DataTable();
     });
-    function Delete(id){
-        alert(id)
+    function Delete(id, name){
         var txt;
-        var r = confirm("Are you sure you want to Delete?");
+        var r = confirm("Do you want to delete " + name + "?");
         if (r == true) {
 
             $.ajax(
             {
                 type: "POST",
-                url: '@Url.Action("Delete", "Members")',
+                url: '@Url.Action("Delete", "HTXMembers")',
                 data: {
                     id: id
                 },
                 error: function (result) {
-                    alert("error");
+                    alert("Failed to delete " + name + "!");
                 },
                 success: function (result) {
                     if (result == true) {

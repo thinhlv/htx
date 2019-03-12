@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using htx_web.Models;
 
 namespace htx_web.Controllers
 {
-    public class MembersController : Controller
+    public class HTXMembersController : Controller
     {
         private readonly MyDbContext _context;
 
-        public MembersController(MyDbContext context)
+        public HTXMembersController(MyDbContext context)
         {
             _context = context;
         }
@@ -21,25 +18,7 @@ namespace htx_web.Controllers
         // GET: Members
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Member.ToListAsync());
-        }
-
-        // GET: Members/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var member = await _context.Member
-                .FirstOrDefaultAsync(m => m.id == id);
-            if (member == null)
-            {
-                return NotFound();
-            }
-
-            return View(member);
+            return View(await _context.HTXMember.ToListAsync());
         }
 
         // GET: Members/Create
@@ -52,11 +31,11 @@ namespace htx_web.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( Member member)
+        public async Task<IActionResult> Create(HTXMember member)
         {
             if (ModelState.IsValid)
             {
+                member.created = System.DateTime.Now;
                 _context.Add(member);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -64,7 +43,6 @@ namespace htx_web.Controllers
             return View(member);
         }
 
-        // GET: Members/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,7 +50,7 @@ namespace htx_web.Controllers
                 return NotFound();
             }
 
-            var member = await _context.Member.FindAsync(id);
+            var member = await _context.HTXMember.FindAsync(id);
             if (member == null)
             {
                 return NotFound();
@@ -84,19 +62,19 @@ namespace htx_web.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(/*int id, [Bind("id,name,phone,address")]*/ Member member)
+        public async Task<IActionResult> Edit(HTXMember member)
         {
-            //if (id != member.id)
-            //{
-            //    return NotFound();
-            //}
-
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(member);
+                    var m = await _context.HTXMember.FindAsync(member.id);
+                    m.name = member.name;
+                    m.email = member.email;
+                    m.phone = member.phone;
+                    m.address = member.address;
+
+                    _context.Update(m);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -115,38 +93,21 @@ namespace htx_web.Controllers
             return View(member);
         }
 
-        //// GET: Members/Delete/5
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var member = await _context.Member
-        //        .FirstOrDefaultAsync(m => m.id == id);
-        //    if (member == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(member);
-        //}
-
         // POST: Members/Delete/5
         [HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var member = await _context.Member.FindAsync(id);
-            _context.Member.Remove(member);
+            var member = await _context.HTXMember.FindAsync(id);
+            _context.HTXMember.Remove(member);
             await _context.SaveChangesAsync();
+
+
             return RedirectToAction(nameof(Index));
         }
 
         private bool MemberExists(int id)
         {
-            return _context.Member.Any(e => e.id == id);
+            return _context.HTXMember.Any(e => e.id == id);
         }
     }
 }

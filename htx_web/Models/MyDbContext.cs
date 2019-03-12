@@ -21,7 +21,7 @@ namespace htx_web.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("Server=172.16.1.33;Port=3307;User Id=root;Password=password;Database=db");
+                optionsBuilder.UseMySql("Server=172.16.1.33;Port=3306;User Id=root;Password=password;Database=db");
             }
         }
 
@@ -30,6 +30,6 @@ namespace htx_web.Models
 
         public DbSet<htx_web.Models.Admin> Admin { get; set; }
 
-        public DbSet<htx_web.Models.Member> Member { get; set; }
+        public DbSet<htx_web.Models.HTXMember> HTXMember { get; set; }
     }
 }

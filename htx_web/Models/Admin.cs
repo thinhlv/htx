@@ -13,5 +13,7 @@ namespace htx_web.Models
         public string password { get; set; }
         public string email { get; set; }
         public string phone { get; set; }
+        public string address { get; set; }
+        public DateTime created { get; set; }
     }
 }
