@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "234a154bd8bfc4164833558c721509e3277b1955"
+    "signature": "7a619d9f411c81ff0625fd41dbadd216a693ffe4"
   },
   "compilationOptions": {
     "defines": [
@@ -24,7 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "htx_web/1.0.0": {
         "dependencies": {
-          "EntityFramework": "6.2.0",
+          "EntityFramework": "6.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
@@ -39,15 +39,15 @@
           "htx_web.dll": {}
         }
       },
-      "EntityFramework/6.2.0": {
+      "EntityFramework/6.0.0": {
         "runtime": {
           "lib/net45/EntityFramework.SqlServer.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.2.61023.0"
+            "fileVersion": "6.0.20911.0"
           },
           "lib/net45/EntityFramework.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.2.61023.0"
+            "fileVersion": "6.0.20911.0"
           }
         },
         "compile": {
@@ -3747,12 +3747,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "EntityFramework/6.2.0": {
+    "EntityFramework/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-+aB/cnEAr9KqVMjmZwu+Fzy3EOPjCIzNsPAUyn19WbB2u3LFHd2OB3X56ohAj7EBf2hppl9M27nlRnkQxOhoAA==",
-      "path": "entityframework/6.2.0",
-      "hashPath": "entityframework.6.2.0.nupkg.sha512"
+      "sha512": "sha512-LWzCSlNOd9b0FpgH6m1Xuo73qqMHfqcxfczCThTqvtAtKHLIs+75nqAypGmwE3KizHWAPu7990cX4Z5gNGJOJw==",
+      "path": "entityframework/6.0.0",
+      "hashPath": "entityframework.6.0.0.nupkg.sha512"
     },
     "iTextSharp.LGPLv2.Core/1.5.0": {
       "type": "package",
